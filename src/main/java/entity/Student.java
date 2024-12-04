@@ -3,8 +3,6 @@ package entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.security.auth.Subject;
 import java.util.List;
 
 @Entity
