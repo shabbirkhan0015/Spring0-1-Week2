@@ -1,4 +1,4 @@
-package entity;
+package com.spring0_to_1.solution2ndweek.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class Professor {
+public class Subject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,11 +17,12 @@ public class Professor {
 
     private String title;
 
-    // One professor teaches many subjects
-    @OneToMany(mappedBy = "professor")
-    private List<Subject> subjects;
 
-    // Many professors can have many students
-    @ManyToMany(mappedBy = "professors")
+    @ManyToOne
+    @JoinColumn(name = "professor_id")
+    private Professor professor;
+
+
+    @ManyToMany(mappedBy = "subjects")
     private List<Student> students;
 }

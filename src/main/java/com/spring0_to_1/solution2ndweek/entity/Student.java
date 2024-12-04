@@ -1,4 +1,4 @@
-package entity;
+package com.spring0_to_1.solution2ndweek.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
